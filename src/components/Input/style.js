@@ -1,12 +1,19 @@
 import Styled from "styled-components";
 
 export const Container = Styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size:18px;
-    background-color: grey;
+
+`;
+
+export const InputText = Styled.input`
+    width: 100%;
+    padding:8px 20px;
+    box-sizing: border-box;
+    border: 0px;
+    border-bottom: 1px solid #1F2D3D;
+`;
+
+export const Label = Styled.label`
+    color: #1F2D3D;
+    font-size: 16px;
+
 `;
