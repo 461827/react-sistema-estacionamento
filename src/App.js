@@ -10,12 +10,10 @@ function App() {
   return (
     <div>
       <Layout>
-        <Button label="Adicionar 1" kkkkk={() => { alert("oi") }} />
-        <Button label="Adicionar 2" onClick={() => { alert("oi 2") }} />
-        <Button label="Adicionar 3" />
-        <Input />
         <Title />
         <Subtitle />
+        <Input />
+        <Button label="Adicionar 1"/>
       </Layout>
     </div>
   );
