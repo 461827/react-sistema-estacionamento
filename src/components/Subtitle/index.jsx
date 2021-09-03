@@ -3,10 +3,10 @@ import React from "react";
 import { Container } from "./style";
 
 
-export const Subtitle = () => {
+export const Subtitle = ({children}) => {
     return(
         <Container>
-            Adicionar
+            {children}
         </Container>
     )
 }
