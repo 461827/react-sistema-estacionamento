@@ -1,6 +1,9 @@
 import React from "react";
-import {Button} from "./componentes/Button"
-import {Input} from "./components/Input"
+import {Button} from "./components/Button";
+import {Input} from "./components/Input";
+import { Title } from "./components/Title";
+import { Subtitle } from "./components/Subtitle";
+
 
 function App() {
   return (
@@ -10,6 +13,11 @@ function App() {
       <Button label="Adicionar 3"/>  
 
       <Input/>
+
+      <Title/>
+
+      <Subtitle/>
+
     </div>
   );
 }
