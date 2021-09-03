@@ -5,6 +5,8 @@ export const Container = Styled.h1`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: -15px;
-    
+    margin-top: -20px;
+    font-size: 30px;
+    background-color: grey;
+
 `

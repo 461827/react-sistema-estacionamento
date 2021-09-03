@@ -5,8 +5,8 @@ export const Container = Styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size:18px;
+    margin-top: -22px;
+    font-size: 18px;
     background-color: grey;
-`;
+
+`
