@@ -5,7 +5,7 @@ import {Container} from "./style"
 export const Input = () => {
     return(
         <Container>
-            componente input
+            Campo input
         </Container>
     )
 } 

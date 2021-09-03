@@ -1,9 +1,10 @@
 import Styled from "styled-components";
 
 export const Container = Styled.h1`
-    width: 100%;
-    background-color: red;
-    text-align: center;
-    color: white;
-    font-size: 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -15px;
+    
 `

@@ -1,7 +1,9 @@
 import Styled from "styled-components";
 
 export const Container = Styled.button`
- background-color: red;
- border: 5px solid;
+ background-color: grey;
+ border: 2px solid;
+ display:flex;
+ align-items: center;
  
 `; 
