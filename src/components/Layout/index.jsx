@@ -2,10 +2,10 @@ import React from "react";
 
 import {Container} from "./style";
 
-export const Layout = () => {
+export const Layout = ({children}) => {
     return(
         <Container>
-            Campo Layout
+            {children}
         </Container>
-    )
-}
+    );
+};

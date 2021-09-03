@@ -1,12 +1,14 @@
 import Styled from "styled-components";
 
 export const Container = Styled.div`
+    width: 380px;
+    height: 680px;
+    margin: 30px auto 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: -22px;
     font-size: 18px;
-    background-color: grey;
-
-`
+    border: 2px solid #dedede;
+    border-radius: 20px;
+`;
