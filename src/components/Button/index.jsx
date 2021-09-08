@@ -2,10 +2,10 @@ import React from "react";
 
 import {Container} from "./style"
 
-export const Button = ({label, kkkkk}) => {
+export const Button = ({label, onClick}) => {
 
     return (
-        <Container onClick={kkkkk}>
+        <Container onClick={() =>{onClick()}}>
            {label}
         </Container>
         

@@ -10,4 +10,5 @@ export const Container = Styled.button`
   text-transform: uppercase;
   font-weight: bold;
   border-radius: 8px;
+  cursor: pointer;
 `; 
