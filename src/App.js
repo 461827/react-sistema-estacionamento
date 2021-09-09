@@ -1,18 +1,21 @@
-import React,{useState} from "react";
+import React from "react";
+
+
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 import PageForm from "./pages/Form";
 import PageList from "./pages/List";
 
-function App() {
-  const [route,setRoute] = useState("register");
 
+function App() {
   return (
-    <> 
-    {route === "home" && <PageList setRoute={setRoute}/>}
-    {route === "register" && <PageForm setRoute={setRoute}/>}
-      
-    </>
+    <Router>
+        <Switch>
+          <Route path="/form" exact component={PageForm} />
+          <Route path="/list" component={PageList} />
+        </Switch>
+    </Router>
   );
 }
 
-export default App;
+export default App
