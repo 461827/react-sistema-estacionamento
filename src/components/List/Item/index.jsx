@@ -6,12 +6,12 @@ import {ButtonIcon} from "../ButtonIcon";
 
 import {Container, ContentInfo,ContentActions,ModelCar, ParkingSpace} from "./style";
 
-export const Item = () => {
+export const Item = ({data}) => {
     return(
         <Container>
             <ContentInfo>
-                <ModelCar>Fusca</ModelCar>
-                <ParkingSpace>Vaga 10</ParkingSpace>
+                <ModelCar>{data.model}</ModelCar>
+                <ParkingSpace>Vaga {data.parkingSpace}</ParkingSpace>
             </ContentInfo>
             <ContentActions>
                 <ButtonIcon name={<FaEdit/>} onClick={() => {alert("edit")}}/>

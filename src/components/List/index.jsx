@@ -2,19 +2,13 @@ import React from "react";
 
 import {Container} from "./style";
 import {Item} from "./Item"
-import {Space} from "../Space"
 
-
-export const List = () => {
+export const List = ({data}) => {
     return(
        <Container>
-            <Item/> 
-            <Item/>        
-            <Item/>        
-            <Item/>        
-            <Item/>        
-            <Item/>        
-
+           {data.map( (item,key) => {
+               return <Item data={item} key={key}/> 
+           })}
        </Container>
     )
 }
