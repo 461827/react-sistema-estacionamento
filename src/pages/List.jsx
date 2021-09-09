@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom"
+import { db } from "../db";
 
 import { Button } from "../components/Button";
 import { Title } from "../components/Title";
@@ -10,6 +11,7 @@ import { List } from "../components/List";
 
 export default () => {
     const history = useHistory();
+
     return(
         <Layout>
             <Title />
@@ -24,7 +26,7 @@ export default () => {
 
             <Space top={6}/>
 
-            <List/> 
+            <List data={db}/> 
           </Layout>
     )
 }
