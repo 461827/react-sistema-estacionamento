@@ -1,4 +1,6 @@
 import React from "react";
+import{useHistory} from "react-router-dom"
+
 import { Layout } from "../components/Layout";
 import { Button } from "../components/Button";
 import { Input } from "../components/Input";
@@ -6,9 +8,9 @@ import { Title } from "../components/Title";
 import { Subtitle } from "../components/Subtitle";
 import {Space} from "../components/Space";
 
+export default () => {
+    const history = useHistory();
 
-
-export default ({setRoute}) => {
     return(
         <Layout>
             <Title/>
@@ -43,7 +45,7 @@ export default ({setRoute}) => {
                 top={2}
                 />
 
-            <Button label="Adicionar" onClick={() =>{setRoute("home")}}/>
+        <Button label="Adicionar" onClick={() => {history.push('/list')}}/>
             
         </Layout>
     )

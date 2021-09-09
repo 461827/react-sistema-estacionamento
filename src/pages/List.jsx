@@ -1,4 +1,6 @@
 import React from "react";
+import { useHistory } from "react-router-dom"
+
 import { Button } from "../components/Button";
 import { Title } from "../components/Title";
 import { Subtitle } from "../components/Subtitle";
@@ -6,7 +8,8 @@ import { Layout } from "../components/Layout";
 import {Space} from "../components/Space";
 import { List } from "../components/List";
 
-export default ({setRoute}) => {
+export default () => {
+    const history = useHistory();
     return(
         <Layout>
             <Title />
@@ -17,7 +20,7 @@ export default ({setRoute}) => {
 
             <Space top={6}/>
 
-            <Button label="Adicionar" onClick={() =>{setRoute("register")}}/>
+            <Button label="Adicionar" onClick={() => {history.push('/form')}}/>
 
             <Space top={6}/>
 
