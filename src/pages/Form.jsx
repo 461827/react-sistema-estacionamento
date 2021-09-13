@@ -11,7 +11,7 @@ import {Space} from "../components/Space";
 
 export default () => {
     const history = useHistory();
-    const [showModal, setShowModal] = useState(false)
+    const [showModal, setShowModal] = useState(false);
 
     return(
         <Layout>
@@ -33,19 +33,19 @@ export default () => {
                 label="Placa do Veiculo" 
                 placeholder="Digite a placa" 
                 top={2}
-                />
+            />
 
             <Input 
                 label="Nome do Funcionario" 
                 placeholder="Selecione" 
                 top={2}
-                />
+            />
 
             <Input 
                 label="Vaga" 
                 placeholder="Selecione" 
                 top={2}
-                />
+            />
 
             <Button label="Adicionar" onClick={() => {setShowModal(true)}}/>
 
