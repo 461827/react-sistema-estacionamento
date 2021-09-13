@@ -1,11 +1,9 @@
 import React from "react";
 
-
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import PageForm from "./pages/Form";
 import PageList from "./pages/List";
-
 
 function App() {
   return (
