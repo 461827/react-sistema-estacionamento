@@ -8,6 +8,5 @@ export const Button = ({label, onClick}) => {
         <Container onClick={() =>{onClick()}}>
            {label}
         </Container>
-        
     )
 }
