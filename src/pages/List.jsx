@@ -2,6 +2,8 @@ import React from "react";
 import { useHistory } from "react-router-dom"
 import { db } from "../db";
 
+
+import { ModalDialog } from "../components/ModalDialog";
 import { Button } from "../components/Button";
 import { Title } from "../components/Title";
 import { Subtitle } from "../components/Subtitle";
