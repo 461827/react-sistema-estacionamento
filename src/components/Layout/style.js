@@ -10,4 +10,5 @@ export const Container = Styled.div`
     font-size: 18px;
     border: 2px solid #dedede;
     border-radius: 20px;
+    position: relative;
 `;
