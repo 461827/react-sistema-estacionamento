@@ -13,7 +13,6 @@ import {Space} from "../components/Space";
 export default () => {
     const history = useHistory();
     const params = useParams();
-    console.log(history.location.pathname.split("/")[2])
 
     const [showModal, setShowModal] = useState(false);
     const [isView, setIsView] = useState(false);
