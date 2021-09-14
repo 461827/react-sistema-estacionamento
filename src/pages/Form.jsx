@@ -1,5 +1,6 @@
 import React,{useState} from "react";
-import{useHistory} from "react-router-dom"
+import{useHistory, useParams} from "react-router-dom"
+import {db} from "../db"
 
 import { Layout } from "../components/Layout";
 import { Button } from "../components/Button";
@@ -11,7 +12,32 @@ import {Space} from "../components/Space";
 
 export default () => {
     const history = useHistory();
+    const params = useParams();
     const [showModal, setShowModal] = useState(false);
+    const [nameProprietario, setNameProprietario] = useState("");
+    const [modelCar, setModelCar] = useState("");
+    const [numPlaca, setNumPlaca] = useState("");
+    const [nameFuncionario, setNameFuncionario] = useState("");
+    const [numVaga, setNumVaga] = useState("");
+
+    console.log(params.space)
+
+    console.log(db?.find((item) => {return item.parkingSpace === 5}))
+    
+
+    const handleOnSubmit = () => {
+        const data = {
+            nameClient: nameProprietario,
+            model: modelCar,
+            plate: numPlaca,
+            employee: nameFuncionario,
+            parkingSpace: numVaga
+        }
+
+        db.push(data)
+    
+        setShowModal(true)
+    }
 
     return(
         <Layout>
@@ -25,29 +51,49 @@ export default () => {
 
             <Input 
                 label="Nome do Proprietario" 
-                placeholder="Digite o nome" 
+                placeholder="Digite o nome"
+                value={nameProprietario}
+                onChange={(event) => {setNameProprietario(event.target.value)}} 
+                top={2}
+            />
+
+            <Input 
+                label="Modelo do Veiculo" 
+                placeholder="Digite o modelo"
+                value={modelCar}
+                onChange={(event) => {setModelCar(event.target.value)}} 
                 top={2}
             />
 
             <Input 
                 label="Placa do Veiculo" 
-                placeholder="Digite a placa" 
+                placeholder="Digite a placa"
+                value={numPlaca}
+                onChange={(event) => {setNumPlaca(event.target.value)}}
                 top={2}
             />
 
             <Input 
                 label="Nome do Funcionario" 
-                placeholder="Selecione" 
+                placeholder="Selecione"
+                value={nameFuncionario}
+                onChange={(event) => {setNameFuncionario(event.target.value)}} 
                 top={2}
             />
 
             <Input 
                 label="Vaga" 
-                placeholder="Selecione" 
+                placeholder="Selecione"
+                value={numVaga}
+                onChange={(event) => {setNumVaga(event.target.value)}} 
                 top={2}
             />
 
-            <Button label="Adicionar" onClick={() => {setShowModal(true)}}/>
+            <Button 
+                label="Adicionar" 
+                onClick={() => {handleOnSubmit()}}
+            
+            />
 
             {showModal && (
                 <ModalDialog 
