@@ -60,7 +60,11 @@ export default () => {
 
             <Space top={2}/>
 
-            <Subtitle>Adicionar Veiculo</Subtitle>
+            <Subtitle>
+                {params.space === undefined ?
+                "Adicionar Veiculo": isView 
+                ? "Vizualizar":"Editar Veiculos"}
+            </Subtitle>
 
             <Space top={6}/>
 
