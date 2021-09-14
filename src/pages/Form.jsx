@@ -1,5 +1,5 @@
-import React,{useState} from "react";
-import{useHistory, useParams} from "react-router-dom"
+import React,{useEffect, useState,} from "react";
+import{useHistory, useParams, } from "react-router-dom"
 import {db} from "../db"
 
 import { Layout } from "../components/Layout";
@@ -13,17 +13,14 @@ import {Space} from "../components/Space";
 export default () => {
     const history = useHistory();
     const params = useParams();
+
     const [showModal, setShowModal] = useState(false);
+
     const [nameProprietario, setNameProprietario] = useState("");
     const [modelCar, setModelCar] = useState("");
     const [numPlaca, setNumPlaca] = useState("");
     const [nameFuncionario, setNameFuncionario] = useState("");
     const [numVaga, setNumVaga] = useState("");
-
-    console.log(params.space)
-
-    console.log(db?.find((item) => {return item.parkingSpace === 5}))
-    
 
     const handleOnSubmit = () => {
         const data = {
@@ -38,6 +35,23 @@ export default () => {
     
         setShowModal(true)
     }
+
+    useEffect(() => {
+        if(params.space === undefined){ 
+            return
+        }
+
+        const data = db.find((item) => {return item.parkingSpace === Number(params.space)})
+
+        console.log(data)
+
+        setNameProprietario(data.nameClient)
+        setModelCar(data.model)
+        setNumPlaca(data.plate)
+        setNameFuncionario(data.employee)
+        setNumVaga(data.parkingSpace)
+
+    }, [params.space])
 
     return(
         <Layout>
