@@ -1,12 +1,15 @@
 
 import React from "react";
 import {FaEdit,FaSistrix,FaSignOutAlt} from "react-icons/fa";
+import {useHistory} from"react-router-dom";
 
 import {ButtonIcon} from "../ButtonIcon"; 
 
 import {Container, ContentInfo,ContentActions,ModelCar, ParkingSpace} from "./style";
 
 export const Item = ({data}) => {
+    const history = useHistory();
+
     return(
         <Container>
             <ContentInfo>
@@ -15,7 +18,7 @@ export const Item = ({data}) => {
             </ContentInfo>
             <ContentActions>
                 <ButtonIcon name={<FaEdit/>} onClick={() => {alert("edit")}}/>
-                <ButtonIcon name={<FaSistrix/>} onClick={() => {alert("ver")}}/>
+                <ButtonIcon name={<FaSistrix/>} onClick={() => {history.push('/form/' + data.parkingSpace)}}/>
                 <ButtonIcon name={<FaSignOutAlt/>} onClick={() => {alert("remover")}}/>
             </ContentActions>
         </Container>
