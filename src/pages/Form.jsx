@@ -13,8 +13,10 @@ import {Space} from "../components/Space";
 export default () => {
     const history = useHistory();
     const params = useParams();
+    console.log(history.location.pathname.split("/")[2])
 
     const [showModal, setShowModal] = useState(false);
+    const [isView, setIsView] = useState(false);
 
     const [nameProprietario, setNameProprietario] = useState("");
     const [modelCar, setModelCar] = useState("");
@@ -37,13 +39,12 @@ export default () => {
     }
 
     useEffect(() => {
+        setIsView(history.location.pathname.split("/")[2] === "view")
         if(params.space === undefined){ 
             return
         }
 
         const data = db.find((item) => {return item.parkingSpace === Number(params.space)})
-
-        console.log(data)
 
         setNameProprietario(data.nameClient)
         setModelCar(data.model)
@@ -67,7 +68,8 @@ export default () => {
                 label="Nome do Proprietario" 
                 placeholder="Digite o nome"
                 value={nameProprietario}
-                onChange={(event) => {setNameProprietario(event.target.value)}} 
+                onChange={(event) => {setNameProprietario(event.target.value)}}
+                disabled={isView}
                 top={2}
             />
 
@@ -76,6 +78,7 @@ export default () => {
                 placeholder="Digite o modelo"
                 value={modelCar}
                 onChange={(event) => {setModelCar(event.target.value)}} 
+                disabled={isView}
                 top={2}
             />
 
@@ -84,6 +87,7 @@ export default () => {
                 placeholder="Digite a placa"
                 value={numPlaca}
                 onChange={(event) => {setNumPlaca(event.target.value)}}
+                disabled={isView}
                 top={2}
             />
 
@@ -92,6 +96,7 @@ export default () => {
                 placeholder="Selecione"
                 value={nameFuncionario}
                 onChange={(event) => {setNameFuncionario(event.target.value)}} 
+                disabled={isView}
                 top={2}
             />
 
@@ -99,7 +104,9 @@ export default () => {
                 label="Vaga" 
                 placeholder="Selecione"
                 value={numVaga}
-                onChange={(event) => {setNumVaga(event.target.value)}} 
+                onChange={(event) => {setNumVaga(event.target.value)}}
+                disabled={isView}
+
                 top={2}
             />
 
