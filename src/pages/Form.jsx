@@ -112,7 +112,7 @@ export default () => {
             {showModal && (
                 <ModalDialog 
                     title="Muito Bom" 
-                    onNext={() => {history.push('/list')}} 
+                    onNext={() => {history.push('/')}} 
                 />
             )}
         </Layout>
