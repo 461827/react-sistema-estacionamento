@@ -10,6 +10,8 @@ function App() {
     <Router>
         <Switch>
           <Route path="/form" exact component={PageForm} />
+          <Route path="/form/:space" exact component={PageForm} />
+          
           <Route path="/list" component={PageList} />
         </Switch>
     </Router>
