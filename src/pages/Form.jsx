@@ -30,7 +30,7 @@ export default () => {
             model: modelCar,
             plate: numPlaca,
             employee: nameFuncionario,
-            parkingSpace: numVaga
+            parkingSpace: Number(numVaga)
         }
 
         isEdit ? updateItemV2(data): db.push(data)
