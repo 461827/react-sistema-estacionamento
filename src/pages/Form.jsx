@@ -1,6 +1,6 @@
-import React,{useEffect, useState,} from "react";
+import React,{useEffect, useState} from "react";
 import{useHistory, useParams, } from "react-router-dom"
-import {db} from "../db"
+import {db, updateItemV2} from "../db"
 
 import { Layout } from "../components/Layout";
 import { Button } from "../components/Button";
@@ -16,6 +16,7 @@ export default () => {
 
     const [showModal, setShowModal] = useState(false);
     const [isView, setIsView] = useState(false);
+    const [isEdit, setIsEdit] = useState(false);
 
     const [nameProprietario, setNameProprietario] = useState("");
     const [modelCar, setModelCar] = useState("");
@@ -32,13 +33,14 @@ export default () => {
             parkingSpace: numVaga
         }
 
-        db.push(data)
-    
+        isEdit ? updateItemV2(data): db.push(data)
+
         setShowModal(true)
     }
 
     useEffect(() => {
         setIsView(history.location.pathname.split("/")[2] === "view")
+        setIsEdit(history.location.pathname.split("/")[2] === "edit")
         if(params.space === undefined){ 
             return
         }
@@ -108,13 +110,15 @@ export default () => {
                 placeholder="Selecione"
                 value={numVaga}
                 onChange={(event) => {setNumVaga(event.target.value)}}
-                disabled={isView}
+                disabled={isView | isEdit}
 
                 top={2}
             />
 
             <Button 
-                label="Adicionar" 
+                label={ params.space === undefined ?
+                    "Adicionar Veiculo": isView 
+                    ? "ok":"Editar"}
                 onClick={() => {handleOnSubmit()}}
             
             />
