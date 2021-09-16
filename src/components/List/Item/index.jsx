@@ -2,6 +2,7 @@
 import React from "react";
 import {FaEdit,FaSistrix,FaSignOutAlt} from "react-icons/fa";
 import {useHistory} from"react-router-dom";
+import {removeItem} from "../../../db"
 
 import {ButtonIcon} from "../ButtonIcon"; 
 
@@ -25,7 +26,7 @@ export const Item = ({data}) => {
                     onClick={() => {history.push('/form/view/' + data.parkingSpace)}}/>
                 <ButtonIcon 
                     name={<FaSignOutAlt/>} 
-                    onClick={() => {alert("remover")}}/>
+                    onClick={() => {removeItem(data.parkingSpace)}}/>
             </ContentActions>
         </Container>
     )
