@@ -118,14 +118,15 @@ export default () => {
             <Button 
                 label={ params.space === undefined ?
                     "Adicionar Veiculo": isView 
-                    ? "ok":"Editar"}
+                    ? "ok":"Guardar Informações"}
                 onClick={() => {handleOnSubmit()}}
-            
             />
 
             {showModal && (
                 <ModalDialog 
-                    title="Muito Bom" 
+                    title={ params.space === undefined ?
+                        "Veiculo Adicionado": isView 
+                        ? "ok":"Veiculo Editado"} 
                     onNext={() => {history.push('/')}} 
                 />
             )}
